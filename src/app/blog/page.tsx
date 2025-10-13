@@ -7,14 +7,20 @@ type PostMeta = {
   slug: string;
   title: string;
   date: string;
-  categories: string[]; // always defined
+  categories: string[];
 };
 
-type Props = {
-  theme: 'default' | 'pink' | 'green';
+type SearchParams = {
+  theme?: 'default' | 'pink' | 'green';
 };
 
-export default async function BlogPage({ theme }: Props) {
+export default async function BlogPage({ 
+  searchParams 
+}: { 
+  searchParams: Promise<SearchParams> 
+}) {
+  const { theme = 'default' } = await searchParams;
+  
   const postsDir = path.join(process.cwd(), 'src/content/posts');
   const files = fs.readdirSync(postsDir);
 
@@ -28,10 +34,10 @@ export default async function BlogPage({ theme }: Props) {
         slug: filename.replace(/\.(md|mdx)$/, ''),
         title: data.title,
         date: data.date,
-        categories: data.categories ?? [], // always array
+        categories: data.categories ?? [],
       };
     })
-    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()); // latest first
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
   const cardGradient =
     theme === 'pink'
