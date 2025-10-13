@@ -13,7 +13,7 @@ export default function AboutPage() {
       <section className="flex flex-col md:flex-row gap-8 items-center animate-fadeIn">
         <div className="flex-shrink-0 w-48 h-48 relative rounded-full overflow-hidden shadow-lg">
           <Image
-            src="/images/profile.jpg" // replace with your image
+            src="/images/profile.PNG" 
             alt="Aisha Aliyu"
             fill
             className="object-cover"

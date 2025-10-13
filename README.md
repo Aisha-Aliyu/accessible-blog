@@ -1,36 +1,123 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Accessible Blog & Gallery
+
+A modern, fully accessible blog and gallery platform built with Next.js and Tailwind CSS. This project emphasizes accessibility, responsiveness, performance optimization, and elegant UI/UX design. It includes a blog with MDX support, an interactive gallery, and a dynamic color theme toggle.
+
+---
+
+## Demo
+
+[Live Demo](https://accessible-blog-me.vercel.app)
+
+---
+
+## Features
+
+- Accessible Design  
+  Semantic HTML, focus-visible styles, skip links, and screen reader support.
+
+- Responsive Layout  
+  Works across mobile, tablet, and desktop screens.
+
+- Dynamic Blog  
+  - Markdown/MDX-based posts  
+  - Syntax highlighting with [`react-syntax-highlighter`](https://github.com/react-syntax-highlighter/react-syntax-highlighter)  
+  - Categories and metadata support  
+  - Eight fully fleshed blog posts
+
+- Gallery  
+  - Lazy-loaded images for performance  
+  - Interactive Lightbox with keyboard support  
+  - Responsive grid layout
+
+- Color Theme Toggle  
+  - Switch between default, pink, and green themes  
+  - Smooth transitions and gradients
+
+- Performance Optimized  
+  - Image optimization with Next.js Image component  
+  - Minimal re-renders and efficient loading  
+  - Core Web Vitals-friendly
+
+- Elegant UI/UX  
+  - Animations, hover effects, gradients  
+  - Modern typography and spacing  
+  - Subtle motion respecting prefers-reduced-motion
+
+---
+
+## Technologies Used
+
+- [Next.js](https://nextjs.org/)  
+- [Tailwind CSS](https://tailwindcss.com/)  
+- [React](https://reactjs.org/)  
+- [MDX / gray-matter](https://github.com/jonschlinkert/gray-matter)  
+- [react-syntax-highlighter](https://github.com/react-syntax-highlighter/react-syntax-highlighter)  
+- [Vercel](https://vercel.com/) for deployment  
+
+---
+
+## Folder Structure
+src/
+├─ app/
+│   ├─ blog/          # Blog pages and [slug] routes
+│   ├─ gallery/       # Gallery page
+│   ├─ about/         # About page
+│   ├─ layout.tsx     # Root layout with theme support
+│   ├─ page.tsx       # Home page
+│   └─ globals.css    # Global styles
+├─ components/        # Reusable components (Header, Footer, Lightbox, Highlight)
+└─ content/posts/     # MDX blog posts
+
+---
 
 ## Getting Started
 
-First, run the development server:
+1. Clone the repository:
 
 ```bash
+git clone https://github.com/Aisha-Aliyu/accessible-blog.git
+cd accessible-blog
+
+2. Install dependencies:
+npm install
+
+3. Run the development server:
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+4. Open http://localhost:3000 in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Deployment
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+This project is optimized for deployment on Vercel:
+vercel deploy
 
-## Learn More
+Or visit https://vercel.com/new to connect your GitHub repository for automatic deployments.
 
-To learn more about Next.js, take a look at the following resources:
+⸻
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Accessibility Features
+ • Skip links for keyboard navigation
+ • Focus-visible outlines for interactive elements
+ • Semantic HTML elements (<main>, <header>, <footer>, <article>)
+ • ARIA roles and labels for landmarks
+ • Color contrast compliant themes
+ • Supports reduced motion preference
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+⸻
 
-## Deploy on Vercel
+Future Improvements
+ • Dark mode toggle
+ • Search and filter for blog posts
+ • Infinite scroll or pagination for the gallery
+ • Comment system for blog posts
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+⸻
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Author
+
+Aisha Aliyu — Software Engineer & Game Developer
+ • Portfolio (https://humairah.vercel.app/)
+ • LinkedIn (https://www.linkedin.com/in/aisha-aliyu-628b41376)
+ • GitHub (https://github.com/Aisha-Aliyu)
+
+⸻

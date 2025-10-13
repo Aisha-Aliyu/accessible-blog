@@ -1,3 +1,4 @@
+// next.config.ts
 import withMDX from '@next/mdx';
 
 const mdx = withMDX({ extension: /\.mdx?$/ });
@@ -5,7 +6,7 @@ const mdx = withMDX({ extension: /\.mdx?$/ });
 const nextConfig = mdx({
   reactStrictMode: true,
 
-  // Add pageExtensions here for Next.js
+  // Page extensions including MDX
   pageExtensions: ['ts', 'tsx', 'md', 'mdx'],
 
   images: {
@@ -16,12 +17,13 @@ const nextConfig = mdx({
         pathname: '/**',
       },
     ],
-    unoptimized: true,
+    unoptimized: true, // optional for deployment on Vercel without optimization
   },
 
+  // Remove unsupported experimental option
   experimental: {
-    // @ts-expect-error: allowedDevOrigins is not in official Next.js types
-    allowedDevOrigins: ['http://172.20.10.2:3000'],
+    // Next.js 15+ currently only supports official experimental flags
+    // allowedDevOrigins is removed for production builds
   },
 });
 
