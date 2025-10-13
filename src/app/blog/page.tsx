@@ -1,3 +1,4 @@
+// src/app/blog/page.tsx
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
@@ -7,7 +8,7 @@ type PostMeta = {
   slug: string;
   title: string;
   date: string;
-  categories?: string[];
+  categories: string[]; // always defined
 };
 
 type Props = {
@@ -28,7 +29,7 @@ export default function BlogPage({ theme }: Props) {
         slug: filename.replace(/\.(md|mdx)$/, ''),
         title: data.title,
         date: data.date,
-        categories: data.categories ?? [],
+        categories: data.categories ?? [], // always array
       };
     })
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()); // latest first
@@ -64,9 +65,10 @@ export default function BlogPage({ theme }: Props) {
               </Link>
             </h2>
             <time className="block text-gray-500 text-sm mb-3">{post.date}</time>
-            {(post.categories ?? []).length > 0 && (
+
+            {post.categories.length > 0 && (
               <ul className="flex flex-wrap gap-2">
-                {(post.categories ?? []).map((cat) => (
+                {post.categories.map((cat) => (
                   <li
                     key={cat}
                     className="text-xs px-2 py-1 rounded-full bg-gradient-to-r from-purple-200 via-pink-200 to-yellow-100 text-purple-800"

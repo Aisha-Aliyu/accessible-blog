@@ -1,4 +1,3 @@
-// src/app/blog/[slug]/page.tsx
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
@@ -20,7 +19,6 @@ export async function generateStaticParams() {
 export default async function BlogPostPage({ params }: { params: Params }) {
   const { slug } = params;
 
-  // Detect .mdx or .md
   const exts = ['.mdx', '.md'];
   let filePath = '';
   for (const ext of exts) {
