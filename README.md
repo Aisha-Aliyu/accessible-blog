@@ -6,7 +6,7 @@ A modern, fully accessible blog and gallery platform built with Next.js and Tail
 
 ## Demo
 
-[Live Demo](https://accessible-blog-me.vercel.app)
+[Live Demo](https://accessible-blog.vercel.app)
 
 ---
 
