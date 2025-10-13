@@ -16,8 +16,9 @@ export async function generateStaticParams() {
   }));
 }
 
-export default async function BlogPostPage({ params }: { params: Params }) {
-  const { slug } = params;
+export default async function BlogPostPage({ params }: { params: Promise<Params> }) {
+  // Await the params promise
+  const { slug } = await params;
 
   const exts = ['.mdx', '.md'];
   let filePath = '';

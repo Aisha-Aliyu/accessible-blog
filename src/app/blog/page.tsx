@@ -1,4 +1,3 @@
-// src/app/blog/page.tsx
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
@@ -15,7 +14,7 @@ type Props = {
   theme: 'default' | 'pink' | 'green';
 };
 
-export default function BlogPage({ theme }: Props) {
+export default async function BlogPage({ theme }: Props) {
   const postsDir = path.join(process.cwd(), 'src/content/posts');
   const files = fs.readdirSync(postsDir);
 
